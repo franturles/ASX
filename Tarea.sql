@@ -1,0 +1,11 @@
+create user 'lola'@'localhost' identified by 'abc123.';
+grant all on empleados.* to 'lola'@'localhost' with grant option;
+create user 'emilio'@'localhost' identified by 'abc123.';
+grant all on empleados.* to 'lola'@'localhost' with grant option;
+create table Ejemplo (id varchar(20),Nombre varchar(20));
+insert into Ejemplo(id,Nombre) values (45,"Carniceria");
+grant all on empleados.* to 'emilio'@'localhost' with grant option;
+revoke all on empleados.* from 'emilio'@'localhost';
+show grants for '';
+delete from mysql.user where user = 'Lola';
+delete from mysql.user where user = 'Emilio';
